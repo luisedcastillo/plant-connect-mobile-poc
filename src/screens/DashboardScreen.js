@@ -1,9 +1,17 @@
 import React from 'react';
 import { Text } from 'react-native-paper';
+import Screen from '../components/screen';
 
 const DashboardScreen = props => {
   return (
-    <Text>This is the dashboard</Text>
+    <Screen>
+      <Text>This is the dashboard</Text>
+      <Text>This is the dashboard</Text>
+      <Text>This is the dashboard</Text>
+      <Text>This is the dashboard</Text>
+      <Text>This is the dashboard</Text>
+      <Text>This is the dashboard</Text>
+    </Screen>
   );
 }
 
