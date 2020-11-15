@@ -1,26 +1,11 @@
-import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
-import { Button } from 'react-native-paper';
+import { Provider as PaperProvider } from 'react-native-paper';
+import MainScreen from './src/screens/MainScreen';
 
-export default function App() {
+export default function Main() {
   return (
-    <View style={styles.container}>
-      <Text>Plant Connect PoC</Text>
-      <Text>Hello World!! Gabriel....</Text>
-      <Button mode="text">
-        Press me!
-      </Button>
-      <StatusBar style="auto" />
-    </View>
+    <PaperProvider>
+      <MainScreen />
+    </PaperProvider>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
