@@ -1,26 +1,26 @@
 export default {
   offline: {
-    DisplayColor: '#c0c0c0',
-    DisplayName: 'OFFLINE'
+    displayColor: '#c0c0c0',
+    displayName: 'OFFLINE'
   },
   stop: {
-    DisplayColor: '#666666',
-    DisplayName: 'STOPPED BELT'
+    displayColor: '#666666',
+    displayName: 'STOPPED BELT'
   },
   low: {
-    DisplayColor: '#c1c13a',
-    DisplayName: 'LOW RATE'
+    displayColor: '#c1c13a',
+    displayName: 'LOW RATE'
   },
   blackBelt: {
-    DisplayColor: '#3a6bc1',
-    DisplayName: 'BLACK BELT'
+    displayColor: '#3a6bc1',
+    displayName: 'BLACK BELT'
   },
   optimum: {
-    DisplayColor: '#64e062',
-    DisplayName: 'OPTIMUM RANGE'
+    displayColor: '#64e062',
+    displayName: 'OPTIMUM RANGE'
   },
   avobe: {
-    DisplayColor: '#f45050',
-    DisplayName: 'ABOVE RANGE'
+    displayColor: '#f45050',
+    displayName: 'ABOVE RANGE'
   },
 };

@@ -1,6 +1,6 @@
 import React from 'react';
-import { View, StyleSheet, Text, Dimensions, SafeAreaView, FlatList } from 'react-native';
-import ScaleCard from '../components/ScaleCard';
+import { StyleSheet, FlatList } from 'react-native';
+import ScaleCard from '../components/Scale/ScaleCard';
 import Screen from '../components/Screen';
 
 const capitolHeights = require('../constants/fakes_capitol_heights.json');
@@ -18,6 +18,7 @@ const DashboardView = props => {
         data={scales}
         renderItem={renderScaleItem}
         keyExtractor={item => item.ScaleId}
+        contentContainerStyle={{paddingBottom:190}}
       />
     </Screen>
   );

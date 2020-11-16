@@ -1,7 +1,7 @@
 import React from 'react';
 import { StyleSheet } from 'react-native';
 import { AnimatedCircularProgress } from 'react-native-circular-progress';
-import { Subheading } from 'react-native-paper';
+import { Paragraph } from 'react-native-paper';
 import Colors from '../constants/colors';
 
 const ProgressCircleBar = ({ percentage, size = 80, width = 12 }) => {
@@ -20,9 +20,9 @@ const ProgressCircleBar = ({ percentage, size = 80, width = 12 }) => {
       backgroundColor={Colors.neutral}>
         {
           (fill) => (
-            <Subheading style={styles.innerText}>
+            <Paragraph style={styles.innerText}>
               { cleanPercentage + "%" }
-            </Subheading>
+            </Paragraph>
           )
         }
     </AnimatedCircularProgress>
