@@ -1,6 +1,6 @@
 import React from 'react';
 import { DefaultTheme, Provider as PaperProvider } from 'react-native-paper';
-import MainScreen from './src/screens/MainScreen';
+import MainView from './src/views/MainView';
 import Colors from './src/constants/colors';
 
 const theme = {
@@ -16,7 +16,7 @@ const theme = {
 export default function Main() {
   return (
     <PaperProvider theme={theme}>
-      <MainScreen />
+      <MainView />
     </PaperProvider>
   );
 }

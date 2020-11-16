@@ -1,16 +1,16 @@
 import React from 'react';
 import { View, Image, StyleSheet } from 'react-native';
 import { Appbar } from 'react-native-paper';
-import DashboardScreen from './DashboardScreen';
+import DashboardView from './DashboardView';
 
-const MainScreen = props => {
+const MainView = props => {
 
   return (
     <View>
       <Appbar.Header>
         <Appbar.Content style={styles.title} title={<Image source={require('../assets/images/plant_connect_logo.png')}/>} />
       </Appbar.Header>
-      <DashboardScreen />
+      <DashboardView />
     </View>
   );
 }
@@ -22,4 +22,4 @@ const styles = StyleSheet.create({
   }
 })
 
-export default MainScreen;
+export default MainView;
