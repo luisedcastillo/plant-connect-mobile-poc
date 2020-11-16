@@ -1,29 +1,10 @@
 import React from 'react';
-import { View, StyleSheet, Text } from 'react-native';
-//import { VictoryPie, VictoryChart, VictoryTheme, VictoryContainer } from "victory-native";
-
-//import Screen from '../components/screen';
+import { View, StyleSheet, Text, Dimensions } from 'react-native';
+import ProgressCircleBar from '../components/ProgressCircleBar';
 
 const DashboardView = props => {
   return (
-    <View style={styles.container}>
-      <Text>Text</Text>
-      {/* <VictoryPie
-          colorScale={['#faed00', '#e0e0e0']}
-          
-          
-          innerRadius={100}
-          labels={({ datum }) => ""}
-          // animate={{
-          //   duration: 2000
-          // }}
-          data={[
-            { x: "Progress", y: 40 },
-            { x: "n/a", y: 60 },
-          ]}
-          containerComponent={<VictoryContainer responsive={false} />}
-        /> */}
-    </View>
+    <ProgressCircleBar percentage={75} />
   );
 }
 
@@ -32,7 +13,7 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: "center",
     alignItems: "center",
-    backgroundColor: "gray",
+    //backgroundColor: "gray",
     // height:100,
     // width:100
 
