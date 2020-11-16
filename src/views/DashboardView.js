@@ -9,7 +9,7 @@ const DashboardView = props => {
 
   const scales = capitolHeights.flatMap(m => m.Scales);
   const renderScaleItem = (scale) => (
-    <ScaleCard style={styles.card} scale={scale}/>
+    <ScaleCard style={styles.card} data={scale}/>
   );
 
   return (
