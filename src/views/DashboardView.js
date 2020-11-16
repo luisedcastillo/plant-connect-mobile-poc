@@ -6,23 +6,34 @@ import Screen from '../components/Screen';
 import Colors from '../constants/colors';
 import CapitolHeightsService from '../services/capitolHeightsService';
 
-//const capitolHeights = require('../constants/fakes_capitol_heights.json');
-//const scales = capitolHeights.flatMap(m => m.Scales);
-
 const DashboardView = props => {
   const [isLoading, setLoading] = useState(true);
   const [data, setData] = useState([]);
+  let repeat;
+
+  const refreshScales = () => {
+    //setLoading(true);
+    getScales();
+    repeat = setTimeout(refreshScales, 30000);
+  }
 
   const getScales = () => {
+    console.log("GET SCALES " + new Date());
     CapitolHeightsService
     .getCapitolHeights()
     .then((respnse) => setData(respnse.data.flatMap(m => m.Scales)))
-    .catch((error) => console.error(error))
+    .catch((error) => console.error("ERROR:" + error))
     .finally(() => setLoading(false));
   }
 
   useEffect(() => {
-    getScales();
+    refreshScales();
+
+    return () => {
+      if(repeat) {
+        clearTimeout(repeat);
+      }
+    }
   }, []);
 
   const renderScaleItem = (scale) => (
@@ -37,10 +48,10 @@ const DashboardView = props => {
       <FlatList
         data={data}
         renderItem={renderScaleItem}
-        keyExtractor={item => item.ScaleId}
+        keyExtractor={item => item.ScaleId.toString()}
         contentContainerStyle={styles.item}
         refreshing={isLoading}
-        onRefresh={() => getScales()}
+        onRefresh={getScales}
       />
     </Screen>
 

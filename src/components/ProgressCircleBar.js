@@ -8,18 +8,22 @@ import ScaleService from '../services/scaleService';
 const ProgressCircleBar = ({ percentage, size = 80, width = 12 }) => {
   const cleanPercentage = ScaleService.cleanPercentage(percentage);
 
+  const displayPercentage = cleanPercentage > 100
+  ? '+100'
+  : cleanPercentage;
+
   return (
     <AnimatedCircularProgress
       size={size}
       width={width}
       fill={cleanPercentage}
-      tintColor={Colors.accent}
+      tintColor={Colors.warning}
       rotation={0}
       backgroundColor={Colors.neutral}>
         {
           (fill) => (
             <Paragraph style={styles.innerText}>
-              { cleanPercentage }
+              { displayPercentage + '%' }
             </Paragraph>
           )
         }

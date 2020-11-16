@@ -35,11 +35,7 @@ const cleanPercentage = percentage =>
   ? Math.abs(percentage.toFixed(1))
   : 0;
   
-  cleanPercentage = cleanPercentage > 100
-  ? '+100'
-  : cleanPercentage;
-
-  return cleanPercentage + '%'
+  return cleanPercentage;
 }
 
 export default {
