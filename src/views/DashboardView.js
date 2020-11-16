@@ -13,12 +13,16 @@ const DashboardView = props => {
   const [isLoading, setLoading] = useState(true);
   const [data, setData] = useState([]);
 
-  useEffect(() => {
+  const getScales = () => {
     CapitolHeightsService
-      .getCapitolHeights()
-      .then((respnse) => setData(respnse.data.flatMap(m => m.Scales)))
-      .catch((error) => console.error(error))
-      .finally(() => setLoading(false));
+    .getCapitolHeights()
+    .then((respnse) => setData(respnse.data.flatMap(m => m.Scales)))
+    .catch((error) => console.error(error))
+    .finally(() => setLoading(false));
+  }
+
+  useEffect(() => {
+    getScales();
   }, []);
 
   const renderScaleItem = (scale) => (
@@ -26,13 +30,17 @@ const DashboardView = props => {
   );
 
   const component = isLoading 
-  ? <View style={{flex:1, justifyContent:'center'}}><ActivityIndicator animating={isLoading} color={Colors.primary} size="large"/></View>
+  ? <View style={styles.loading}>
+      <ActivityIndicator animating={isLoading} color={Colors.primary} size="large"/>
+    </View>
   : <Screen style={styles.container}>
       <FlatList
         data={data}
         renderItem={renderScaleItem}
         keyExtractor={item => item.ScaleId}
         contentContainerStyle={styles.item}
+        refreshing={isLoading}
+        onRefresh={() => getScales()}
       />
     </Screen>
 
@@ -40,6 +48,10 @@ const DashboardView = props => {
 }
 
 const styles = StyleSheet.create({
+  loading: {
+    flex:1, 
+    justifyContent:'center'
+  },
   container:{
     flex: 1
   },

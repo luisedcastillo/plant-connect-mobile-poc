@@ -3,12 +3,10 @@ import { StyleSheet } from 'react-native';
 import { AnimatedCircularProgress } from 'react-native-circular-progress';
 import { Paragraph } from 'react-native-paper';
 import Colors from '../constants/colors';
+import ScaleService from '../services/scaleService';
 
 const ProgressCircleBar = ({ percentage, size = 80, width = 12 }) => {
-  
-  const cleanPercentage = percentage
-    ? Math.round(percentage)
-    : 0;
+  const cleanPercentage = ScaleService.cleanPercentage(percentage);
 
   return (
     <AnimatedCircularProgress
@@ -21,7 +19,7 @@ const ProgressCircleBar = ({ percentage, size = 80, width = 12 }) => {
         {
           (fill) => (
             <Paragraph style={styles.innerText}>
-              { cleanPercentage + "%" }
+              { cleanPercentage }
             </Paragraph>
           )
         }

@@ -1,22 +1,22 @@
 export default {
   offline: {
-    displayColor: '#c0c0c0',
+    displayColor: '#ffffff',
     displayName: 'OFFLINE'
   },
   stop: {
-    displayColor: '#666666',
+    displayColor: '#c0c0c0',
     displayName: 'STOPPED BELT'
   },
-  low: {
-    displayColor: '#c1c13a',
-    displayName: 'LOW RATE'
-  },
   blackBelt: {
-    displayColor: '#3a6bc1',
+    displayColor: '#666666',
     displayName: 'BLACK BELT'
   },
+  belowRange: {
+    displayColor: '#f8a13e',
+    displayName: 'BELOW RANGE'
+  },
   optimum: {
-    displayColor: '#64e062',
+    displayColor: '#38a15f',
     displayName: 'OPTIMUM RANGE'
   },
   avobe: {

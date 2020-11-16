@@ -9,7 +9,7 @@ const LeftContent = props => <Surface {...props} />
 
 const ScaleCard = ({style, data}) => {
   const scale = data.item;
-  const status = ScaleService.BuildStatus(scale);
+  const status = ScaleService.buildStatus(scale);
   
   return (
     <View style={style}>

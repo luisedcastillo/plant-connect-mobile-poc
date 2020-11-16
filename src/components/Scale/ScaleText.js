@@ -20,11 +20,11 @@ const ScaleText = ({scale}) => {
       <View style={styles.textContainer}>
         <ScalePrpertyText
           label={Labels.rate}
-          text={scale.ActualRate} 
+          text={scale.LastMeasurementRate.toFixed(0)} 
           suffix={Labels.rateMeasure}/>
         <ScalePrpertyText
           label={Labels.speed}
-          text={scale.ActualSpeed} 
+          text={scale.LastMeasurementSpeed.toFixed(0)} 
           suffix={Labels.speedMeasure}/>
       </View>
     </View>
