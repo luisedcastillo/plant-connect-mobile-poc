@@ -1,22 +1,31 @@
 import React from 'react';
-import { View, StyleSheet, Text, Dimensions } from 'react-native';
-import ProgressCircleBar from '../components/ProgressCircleBar';
+import { View, StyleSheet, Text, Dimensions, SafeAreaView, FlatList } from 'react-native';
+import ScaleCard from '../components/ScaleCard';
+import Screen from '../components/Screen';
+
+const capitolHeights = require('../constants/fakes_capitol_heights.json');
 
 const DashboardView = props => {
+
+  const scales = capitolHeights.flatMap(m => m.Scales);
+  const renderScaleItem = (scale) => (
+    <ScaleCard style={styles.card} scale={scale}/>
+  );
+
   return (
-    <ProgressCircleBar percentage={75} />
+    <Screen style={styles.container}>
+      <FlatList
+        data={scales}
+        renderItem={renderScaleItem}
+        keyExtractor={item => item.ScaleId}
+      />
+    </Screen>
   );
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: "center",
-    alignItems: "center",
-    //backgroundColor: "gray",
-    // height:100,
-    // width:100
-
+  card: {
+    marginBottom: 10,
   }
 });
 

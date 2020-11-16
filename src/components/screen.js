@@ -1,5 +1,6 @@
 import React from 'react';
 import { StyleSheet, View } from 'react-native';
+import Colors from '../constants/colors';
 
 const Screen = props => {
   return (
@@ -11,9 +12,8 @@ const Screen = props => {
 
 const styles = StyleSheet.create({
   screen: {
-    padding: 10,
-    justifyContent: 'center',
-    alignItems: 'center'
+    paddingHorizontal: 10,
+    backgroundColor: Colors.neutral
   }
 })
 
