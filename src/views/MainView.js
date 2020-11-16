@@ -6,7 +6,7 @@ import DashboardView from './DashboardView';
 const MainView = props => {
 
   return (
-    <View>
+    <View style={styles.screen}>
       <Appbar.Header>
         <Appbar.Content style={styles.title} title={<Image source={require('../assets/images/plant_connect_logo.png')}/>} />
       </Appbar.Header>
@@ -19,6 +19,9 @@ const styles = StyleSheet.create({
   title: {
     alignItems: 'center', 
     marginTop:-20
+  },
+  screen: {
+    flex: 1
   }
 })
 

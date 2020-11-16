@@ -1,9 +1,8 @@
 import React from 'react';
 import { View, StyleSheet } from 'react-native';
-import { Avatar, Card, Title, Subheading, Paragraph, Button, Surface, IconButton } from 'react-native-paper';
+import {Card, Surface } from 'react-native-paper';
 import ProgressCircleBar from '../ProgressCircleBar';
 import ScaleText from './ScaleText';
-import ScaleStatus from './ScaleStatus';
 import ScaleService from '../../services/scaleService';
 
 const LeftContent = props => <Surface {...props} />
@@ -11,7 +10,7 @@ const LeftContent = props => <Surface {...props} />
 const ScaleCard = ({style, data}) => {
   const scale = data.item;
   const status = ScaleService.BuildStatus(scale);
-  console.log(status);
+  
   return (
     <View style={style}>
       <Card >
