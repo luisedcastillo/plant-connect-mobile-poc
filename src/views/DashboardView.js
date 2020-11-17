@@ -1,18 +1,19 @@
 import React, {useEffect, useState} from 'react';
 import { StyleSheet, FlatList, View } from 'react-native';
-import { ActivityIndicator } from 'react-native-paper';
+import { BarIndicator } from 'react-native-indicators'; 
 import ScaleCard from '../components/Scale/ScaleCard';
 import Screen from '../components/Screen';
-import Colors from '../constants/colors';
 import CapitolHeightsService from '../services/capitolHeightsService';
+import Colors from '../constants/colors';
 
 const DashboardView = props => {
   const [isLoading, setLoading] = useState(true);
+  const [isRefreshing, setRefreshing] = useState(true);
   const [data, setData] = useState([]);
   let repeat;
 
   const refreshScales = () => {
-    //setLoading(true);
+    setRefreshing(true);
     getScales();
     repeat = setTimeout(refreshScales, 30000);
   }
@@ -23,7 +24,10 @@ const DashboardView = props => {
     .getCapitolHeights()
     .then((respnse) => setData(respnse.data.flatMap(m => m.Scales)))
     .catch((error) => console.error("ERROR:" + error))
-    .finally(() => setLoading(false));
+    .finally(() => {
+      setLoading(false);
+      setRefreshing(false);
+    });
   }
 
   useEffect(() => {
@@ -42,7 +46,7 @@ const DashboardView = props => {
 
   const component = isLoading 
   ? <View style={styles.loading}>
-      <ActivityIndicator animating={isLoading} color={Colors.primary} size="large"/>
+      <BarIndicator color={Colors.primary}/>
     </View>
   : <Screen style={styles.container}>
       <FlatList
@@ -50,7 +54,7 @@ const DashboardView = props => {
         renderItem={renderScaleItem}
         keyExtractor={item => item.ScaleId.toString()}
         contentContainerStyle={styles.item}
-        refreshing={isLoading}
+        refreshing={isRefreshing}
         onRefresh={getScales}
       />
     </Screen>
