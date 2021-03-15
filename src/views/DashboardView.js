@@ -2,7 +2,7 @@ import React, {useEffect, useState} from 'react';
 import { StyleSheet, FlatList, View } from 'react-native';
 import { BarIndicator } from 'react-native-indicators'; 
 import ScaleCard from '../components/Scale/ScaleCard';
-import Screen from '../components/Screen';
+import Screen from '../components/screen';
 import CapitolHeightsService from '../services/capitolHeightsService';
 import Colors from '../constants/colors';
 

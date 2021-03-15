@@ -2,7 +2,7 @@ import client from '../helpers/httpClient';
 
 const getCapitolHeights = () =>
 {
-    const jwt = 'Bearer '.concat('8HRGTXO9yB6hhZj9llcCrroPRnZZssZchKFRYV2vSpAdfuFXOxlTfu-1RixGTTxpIBVGjp_OSZpjElW5JMU167VeMBHDE2A6LhKCWuzQENly3VtS72s5UiuQFpwufI22nBqjUMlH8Z_2_hNpHhEtkLavHpmW4sL2udfWoZBkgtG6tirgyWoSausnpykw-0IjzXuM20_Y_HTlWF1grbn3njRjcA-K-jU-X5HCrSPcbmEVrOLB9U82PCDSHAUu13taOJ53E36c8lcWCdRB6gOp7s2_Mr0H1hPTHuJNmNkBwGOHErtWdLWpFDSDfRDb3PLJlm91d6W7-MhQU_H33RdeatoFQGy5ZBJnqo0Mk3UDf15cm9N2'); 
+    const jwt = 'Bearer '.concat('kqrk6-dAMeEyuQ7eBpgUnj3lqdjI1jD0nkEgY-3jUSt7OLjiv8tcQ8vsvKFk6-Z68rPDxpvbCpBKNnRyy7KJjXH5RIocuGlBJhUEiwxm6eO7V0sdWzjdZW4Mb3YzQ7z0USZ3orkyigRxNNhibxAVuRvkN5H-zYiC6vSEk0kRn_zB02qixCOmBPhjJJMY6YUPApXD1Pb56OY_BeyEDqEl5qnZOjlqWcsTHgjkjNq7XKA9_5A_QQh4z9BH4RfnGY9W2sPW1iOtVCpagn0bqcvn8VnaRaYP-2KGzHSN4kX0tBeP5csx91sX3_WdPbWSL3B1NJ4dBzp0q36g7T3ySy8YiH4tRTU4-Rc_LRg1nkCRXskZPCyR'); 
     return client.get('/Customer/174/locations/dashboard_v3?LocationId=206&CurrentTime=13:11&CurrentDate=2020-11-16', { headers: { Authorization: jwt }});
 }
 
